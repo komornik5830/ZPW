@@ -5,4 +5,4 @@ commit - zapisanie danego stanu projektu w historii Gita, zawiera informacje o z
 branch - oddzielna linia rozwoju projektu. Można w niej wykonywać zmiany bez modyfikacji głównej gałęzi
 checkout - przełączanie się między branchami lub do przechodzenie do określonego stanu projektu
 merge - połączenie zmian z jednej gałęzi z inną gałęzią
-rebase - przenoszenie lub łączenie sekwencji commitów do postaci nowego commita bazowego
+rebase - przenoszenie lub łączenie sekwencji commitów do postaci nowego commita bazowego ^-^
