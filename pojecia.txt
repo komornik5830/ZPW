@@ -1,0 +1,8 @@
+repozytorium - miejsce w którym przechowywane są pliki projektu oraz historia zmian w tych plikach
+github - internetowa platforma która pozwala przechowywać repozytoria git, współpracować nad projektami i udostępniać kod
+git - system kontroli wersji, pozwala śledzić zmiany w plikach, tworzyć gałęzie i wracać do wcześniejszych wersji projektu
+commit - zapisanie danego stanu projektu w historii Gita, zawiera informacje o zmianach, które zostały wykonane
+branch - oddzielna linia rozwoju projektu. Można w niej wykonywać zmiany bez modyfikacji głównej gałęzi
+checkout - przełączanie się między branchami lub do przechodzenie do określonego stanu projektu
+merge - połączenie zmian z jednej gałęzi z inną gałęzią
+rebase - przenoszenie lub łączenie sekwencji commitów do postaci nowego commita bazowego
