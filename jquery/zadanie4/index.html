@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            let clickcounter = 0;
+            $("#p").text(clickcounter);
+
+            $("#div").click(function(){
+                clickcounter++;
+                $("#p").text(clickcounter)
+            })
+
+            $("#naKoniec").click(function(){
+                let $input = $("#produkt").val();
+                if($input.length > 0){
+                    $("#lista").append("<li class='kon'>"+ $input + "</li>");
+                }
+
+                
+                
+                
+            })
+
+            $("#naPoczatek").click(function(){
+                let $input2 = $("#produkt").val();
+                 if($input.length > 0){
+                    $("#lista").prepend("<li class='pocz'>"+ $input2 + "</li>");
+                    
+                 }
+                
+            })
+
+        });
+
+
+
+
+       
+
+        
+    </script>
+
+    <style>
+        #div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .kon {
+            color: blue;
+        }
+        .pocz{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <p id="p"></p>
+
+    </div>
+
+    <ul id="lista">
+  <li>Chleb</li>
+  <li>Mleko</li>
+</ul>
+<input type="text" id="produkt" placeholder="Nazwa produktu">
+<button id="naKoniec">Dodaj na koniec</button>
+<button id="naPoczatek">Dodaj na początek</button>
+    
+</body>
+</html>
