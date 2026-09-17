@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
-    <title>strona jquery</title>
+    <title>Document</title>
     <script>
-        ///$(document).ready(function(){
-        ///    console.log("test");
-
-        //});
-
         $(function(){
-            $("#container").css("background-color","grey");
-            $("#container").css("letter-spacing","5px");
-            $('[href="#"]').attr("href","https://pl.wikipedia.org/wiki/Gra_komputerowa");
-            $("#mc").attr("style","font-weight:bold")
-            $("li").eq(3).css("background-color","lightGrey");
-            $("li").not("#pierwszy").css("background-color","lightBlue");
-            $("li").odd("").css("background-color", "black");
-            $("a").odd("").css("color", "white");
+           
+            $("#answer").change(function(){
+                if(this.checked){
+                      $("#send").removeAttr("disbled");
 
-        })
+                } else {
+                    $("#send").attr("disabled", "disabled");
+                }
+                })
 
+                $("a").eq(1).addClass("another_link");
+                $("a").eq(2).removeClass();
 
+                $("#butt").click(function(){
+                    $("p").removeClass();
+                    alert("sukces")
+                })
+              
+            })
+        
+        
     </script>
 
-    <style>
+   <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 600px;
@@ -71,7 +75,16 @@
     background-color: yellow;
  
 }
+
+.klasa1{
+    background-color: red;
+}
+.klasa2{
+    font-size: 150%;
+}
     </style>
+</head>
+  
 </head>
 <body>
     <div id="container">
@@ -79,7 +92,7 @@
  
     <ul>
         <li id="pierwszy"><a href="#">The Witcher 3: Wild Hunt</a></li>
-        <li><a href="#">Cyberpunk 2077</a></li>
+        <li><a href="#" class="link">Cyberpunk 2077</a></li>
         <li><a href="#">Elden Ring</a></li>
         <li><a href="#">Baldur's Gate 3</a></li>
         <li><a href="#">Starfield</a></li>
@@ -93,7 +106,7 @@
     </ul>
     </div>
 
-    
-    
-</body>
+    <p class="klasa1 klasa2">Szk</p>
+    <button id="butt">usun klasy</button>
+
 </html>
