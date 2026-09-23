@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+              $("#zmien").click(function(){
+                $("#tekst").text("nowa treść")
+              })
+
+              $("#przelacz").click(function(){
+                $("div").toggle();
+              })
+
+              $(".akapit").click(function(){
+                $(this).toggleClass("podswietlony")
+              })
+
+              $("#przywitaj").click(function(){
+                let $imie = $("#imie").val();
+                if($imie == ""){
+                    $("#wynik").text("podaj imie");
+
+                } else {
+
+                
+                $("#wynik").text("cześć"+ $imie)
+                }
+              })
+        });
+
+
+
+
+       
+
+        
+    </script>
+
+    <style>
+        .podswietlony {
+            background-color: green;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <p id="tekst">stary text</p>
+    <button id="zmien">zmień</button>
+
+    <div id="podelko">widzisz mnie</div>
+    <button id="przelacz">przełącz</button>
+
+    <p class="akapit">kliknij mnie</p>
+
+    <input type="text" id="imie">
+    <button id="przywitaj">przywitaj</button>
+    <p id="wynik"></p>
+
+    
+
+    
+</body>
+</html>
