@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            $(document).on("keydown keyup keypress", function(){
+                $('#eventType').text(event.type);
+            })
+
+            $(document).on("mousemove", function(){
+                $('#pageX').text(event.pageX);
+                $('#pageY').text(event.pageY);
+            })
+
+            let pozX = 0;
+
+            $(document).on("keypress", function(event){
+                if(event.key == "a"){
+                    if(pozX == 0){
+
+                    } else {
+                        pozX -= 20;
+                        $("#kw").css("margin-left", pozX)
+
+                    }
+                
+                }else if(event.key == "d"){
+                    pozX += 20;
+                    $("#kw").css("margin-left", pozX)
+
+                    
+                }
+            })
+
+            let pozY = 0;
+
+             $(document).on("keypress", function(event){
+                if(event.key == "w"){
+                    if(pozY == 0){
+
+                    } else {
+                        pozY -= 20;
+                        $("#kw").css("margin-top", pozY)
+
+                    }
+                
+                }else if(event.key == "s"){
+                    pozY += 20;
+                    $("#kw").css("margin-top", pozY)
+
+                }
+            })
+
+            $("#jabko").css({
+                "margin-left":Math.floor((Math.random() * 500) + 1) + "px",
+                "margin-top":Math.floor((Math.random() * 500) + 1) + "px"
+
+            });
+              
+        });
+    </script>
+
+    <style>
+        #kw {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+        #jabko {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+        }
+      
+    </style>
+
+    
+</head>
+<body>
+    <input type="text" id="pole">
+
+    <p>typ zdarzenia:
+        <span id="eventType">---</span>
+    </p>
+
+    <p>
+        pozycja myszy:
+        x = <span id="pageX">---</span>
+        y = <span id="pageY">---</span>
+    </p>
+
+    <div id="kw"></div>
+    <div id="jabko"></div>
+    
+
+    
+
+    
+</body>
+</html>
