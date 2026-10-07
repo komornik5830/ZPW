@@ -17,6 +17,41 @@
             })
 
             let pozX = 0;
+            let pozY = 0;
+
+            let jX = Math.floor((Math.random() * 500) + 1);
+            let jY = Math.floor((Math.random() * 500) + 1);
+
+            $("#jabko").css({
+                "margin-left": jX,
+                "margin-top": jY
+            })
+
+            function sprawdzKolizje(){
+
+                if(
+                    pozX < jX + 20 &&
+                    pozX + 200 > jX &&
+                    pozY < jY + 20 &&
+                    pozY + 200 > jY
+                ){
+                 jX = Math.floor((Math.random() * 500) + 1);
+                 jY = Math.floor((Math.random() * 500) + 1);
+
+                 $("#jabko").css({
+                "margin-left": jX,
+                "margin-top": jY
+                 })
+
+
+                }
+
+               
+            }
+
+            
+
+            
 
             $(document).on("keypress", function(event){
                 if(event.key == "a"){
@@ -26,17 +61,20 @@
                         pozX -= 20;
                         $("#kw").css("margin-left", pozX)
 
+                        sprawdzKolizje()
+
                     }
                 
                 }else if(event.key == "d"){
                     pozX += 20;
                     $("#kw").css("margin-left", pozX)
 
+                    sprawdzKolizje()
+
                     
                 }
             })
 
-            let pozY = 0;
 
              $(document).on("keypress", function(event){
                 if(event.key == "w"){
@@ -46,22 +84,23 @@
                         pozY -= 20;
                         $("#kw").css("margin-top", pozY)
 
+                        sprawdzKolizje()
+
                     }
                 
                 }else if(event.key == "s"){
                     pozY += 20;
                     $("#kw").css("margin-top", pozY)
 
+                    sprawdzKolizje()
+
                 }
             })
 
-            $("#jabko").css({
-                "margin-left":Math.floor((Math.random() * 500) + 1) + "px",
-                "margin-top":Math.floor((Math.random() * 500) + 1) + "px"
-
-            });
+            
               
         });
+        
     </script>
 
     <style>
