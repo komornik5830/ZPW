@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>strona jquery</title>
+    <script>
+       $(function(){
+       
+        $("#następne1").click(function(){
+            $("#pytanie1").hide()
+            $("#pytanie2").show()
+        })
+
+        $("#następne2").click(function(){
+            $("#pytanie3").show()
+            $("#pytanie2").hide()
+        })
+
+        $("#sprawdz").click(function(){
+            if($("input").attr("id") == "dobra1"){
+                $("#wynik1").text("jest git")
+            }
+        })
+
+
+
+    
+        })
+
+        
+
+
+    </script>
+
+    <style>
+        
+      
+
+    </style>
+</head>
+<body>
+    <div id="pytanie1">
+        <p> pytanie 1. jaka jest stolica francji</p>
+        <input type="radio" name="odp1" id="dobra1">paryż</input><br>
+        <input type="radio" name="odp1" id="zla1">warszawa</input><br>
+        <input type="radio" name="odp1" id="zla1">berlin</input><br>
+        <input type="radio" name="odp1" id="zla1">moskwa</input><br>
+        <p id="wynik1"></p>
+        <button id="sprawdz">sprawdź</button>
+        <button id="następne1">pytanie 2</button>
+    </div>
+
+    <div id="pytanie2" hidden>
+        <p> pytanie 2. jak robi krowa</p>
+        <input type="radio" name="odp2" id="zla2">miał</input><br>
+        <input type="radio" name="odp2" id="zla2">bee</input><br>
+        <input type="radio" name="odp2" id="dobra2">moo</input><br>
+        <input type="radio" name="odp2" id="zla2">hau</input><br>
+        <p id="wynik2"></p>
+        <button id="sprawdz">sprawdź</button>
+        <button id="następne2">pytanie 3</button>
+    </div>
+
+    <div id="pytanie3" hidden>
+        <p> pytanie 3. gdzie mieszka ignacy</p>
+        <input type="radio" name="odp3" id="zla3">polna 77</input><br>
+        <input type="radio" name="odp3" id="dobra3">sprinterów 4</input><br>
+        <input type="radio" name="odp3" id="zla3">łódź bałuty</input><br>
+        <input type="radio" name="odp3" id="zla3">pienista 54</input><br>
+        <p id="wynik3"></p>
+        <button id="sprawdz">sprawdź</button>
+        
+    </div>
+
+
+
+</body>
+</html>
