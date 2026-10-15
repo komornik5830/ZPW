@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>strona jquery</title>
+    <script>
+       $(function(){
+        let schowany = false;
+        $("#schowaj").click(function(){
+            if(!schowany){
+                $("#div1").hide()
+                schowany = true;
+            } else {
+                $("#div1").show()
+                schowany = false;
+            }
+        })
+
+        $("#toggle").hide()
+
+        $("#check").change(function(){
+            $("#toggle").toggle()
+        })
+
+         let hidden = false;
+
+        $("#slide").click(function(){
+            if(!hidden){
+                 $("#kwad").slideUp()
+                 hidden = true
+
+            } else {
+                 $("#kwad").slideDown()
+                 hidden = false;
+            }
+        })
+
+        $("#slide2").click(function(){
+            $("#kwad2").slideToggle()
+        })
+
+
+
+
+
+    
+        })
+
+        
+
+
+    </script>
+
+    <style>
+        #kwad {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+         #kwad2 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(28, 129, 25);
+        }
+      
+
+    </style>
+</head>
+<body>
+    <div id="div1">siema</div>
+    <button type="submit" id="schowaj">przycisk</button>
+
+    <input type="checkbox" id="check">
+    <button type="submit" id="toggle">potwierdź</button>
+
+    <div id="kwad">kwadrat</div>
+    <button type="submit" id="slide">slide</button>
+
+    <div id="kwad2">kwadrat2</div>
+    <button type="submit" id="slide2">slide toggle</button>
+
+</body>
+</html>
