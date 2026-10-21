@@ -1,80 +1,157 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <title>strona jquery</title>
+
     <script>
-       $(function(){
-       
-        $("#następne1").click(function(){
-            $("#pytanie1").hide()
-            $("#pytanie2").show()
-        })
+        $(function(){
 
-        $("#następne2").click(function(){
-            $("#pytanie3").show()
-            $("#pytanie2").hide()
-        })
+            $("#następne1").click(function(){
+                $("#pytanie1").hide();
+                $("#pytanie2").show();
+            });
 
-        $("#sprawdz").click(function(){
-            if($("input").attr("id") == "dobra1"){
-                $("#wynik1").text("jest git")
-            }
-        })
+            $("#następne2").click(function(){
+                $("#pytanie2").hide();
+                $("#pytanie3").show();
+            });
 
+            $("#sprawdz1").click(function(){
 
+                if($("#dobra1").is(":checked")){
+                    $("#wynik1").text("jest git");
+                    $("label[for='dobra1']").css("color", "green");
+                }
+                else if($("input[name='odp1']:checked").length > 0){
+                    $("#wynik1").text("zła odpowiedź");
+                    $("label[for='zla1']").css("color", "red");
+                    $("label[for='zla1b']").css("color", "red");
+                    $("label[for='zla1c']").css("color", "red");
+                }
+                else{
+                    $("#wynik1").text("zaznacz odpowiedź");
+                }
 
-    
-        })
+            });
 
-        
+            $("#sprawdz2").click(function(){
 
+                if($("#dobra2").is(":checked")){
+                    $("#wynik2").text("jest git");
+                    $("label[for='dobra2']").css("color", "green");
+                }
+                else if($("input[name='odp2']:checked").length > 0){
+                    $("#wynik2").text("zła odpowiedź");
+                    $("label[for='zla2']").css("color", "red");
+                    $("label[for='zla2b']").css("color", "red");
+                    $("label[for='zla2c']").css("color", "red");
+                }
+                else{
+                    $("#wynik2").text("zaznacz odpowiedź");
+                }
 
+            });
+
+            $("#sprawdz3").click(function(){
+
+                if($("#dobra3").is(":checked")){
+                    $("#wynik3").text("jest git");
+                    $("label[for='dobra3']").css("color", "green");
+                }
+                else if($("input[name='odp3']:checked").length > 0){
+                    $("#wynik3").text("zła odpowiedź");
+                    $("label[for='zla3']").css("color", "red");
+                    $("label[for='zla3b']").css("color", "red");
+                    $("label[for='zla3c']").css("color", "red");
+                }
+                else{
+                    $("#wynik3").text("zaznacz odpowiedź");
+                }
+
+            });
+
+        });
     </script>
 
     <style>
-        
-      
-
+        label {
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
+
     <div id="pytanie1">
-        <p> pytanie 1. jaka jest stolica francji</p>
-        <input type="radio" name="odp1" id="dobra1">paryż</input><br>
-        <input type="radio" name="odp1" id="zla1">warszawa</input><br>
-        <input type="radio" name="odp1" id="zla1">berlin</input><br>
-        <input type="radio" name="odp1" id="zla1">moskwa</input><br>
+        <p>pytanie 1. jaka jest stolica francji</p>
+
+        <input type="radio" name="odp1" id="dobra1">
+        <label for="dobra1">paryż</label><br>
+
+        <input type="radio" name="odp1" id="zla1">
+        <label for="zla1">warszawa</label><br>
+
+        <input type="radio" name="odp1" id="zla1b">
+        <label for="zla1b">berlin</label><br>
+
+        <input type="radio" name="odp1" id="zla1c">
+        <label for="zla1c">moskwa</label><br>
+
         <p id="wynik1"></p>
-        <button id="sprawdz">sprawdź</button>
+
+        <button id="sprawdz1">sprawdź</button>
         <button id="następne1">pytanie 2</button>
     </div>
 
+
     <div id="pytanie2" hidden>
-        <p> pytanie 2. jak robi krowa</p>
-        <input type="radio" name="odp2" id="zla2">miał</input><br>
-        <input type="radio" name="odp2" id="zla2">bee</input><br>
-        <input type="radio" name="odp2" id="dobra2">moo</input><br>
-        <input type="radio" name="odp2" id="zla2">hau</input><br>
+        <p>pytanie 2. jak robi krowa</p>
+
+        <input type="radio" name="odp2" id="zla2">
+        <label for="zla2">miał</label><br>
+
+        <input type="radio" name="odp2" id="zla2b">
+        <label for="zla2b">bee</label><br>
+
+        <input type="radio" name="odp2" id="dobra2">
+        <label for="dobra2">moo</label><br>
+
+        <input type="radio" name="odp2" id="zla2c">
+        <label for="zla2c">hau</label><br>
+
         <p id="wynik2"></p>
-        <button id="sprawdz">sprawdź</button>
+
+        <button id="sprawdz2">sprawdź</button>
         <button id="następne2">pytanie 3</button>
     </div>
 
+
     <div id="pytanie3" hidden>
-        <p> pytanie 3. gdzie mieszka ignacy</p>
-        <input type="radio" name="odp3" id="zla3">polna 77</input><br>
-        <input type="radio" name="odp3" id="dobra3">sprinterów 4</input><br>
-        <input type="radio" name="odp3" id="zla3">łódź bałuty</input><br>
-        <input type="radio" name="odp3" id="zla3">pienista 54</input><br>
+        <p>pytanie 3. gdzie mieszka ignacy</p>
+
+        <input type="radio" name="odp3" id="zla3">
+        <label for="zla3">polna 77</label><br>
+
+        <input type="radio" name="odp3" id="dobra3">
+        <label for="dobra3">sprinterów 4</label><br>
+
+        <input type="radio" name="odp3" id="zla3b">
+        <label for="zla3b">łódź bałuty</label><br>
+
+        <input type="radio" name="odp3" id="zla3c">
+        <label for="zla3c">pienista 54</label><br>
+
         <p id="wynik3"></p>
-        <button id="sprawdz">sprawdź</button>
-        
+
+        <button id="sprawdz3">sprawdź</button>
     </div>
-
-
 
 </body>
 </html>
+
