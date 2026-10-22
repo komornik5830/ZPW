@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <title>strona jquery</title>
+    <script>
+        ///$(document).ready(function(){
+        ///    console.log("test");
+
+        //});
+
+        $(function(){
+            $("#rozmiar").change(function(){
+                $("#platnosc").text("do zapłaty: " + $(this).val() + "zł");
+            })
+
+            $("#newsletter").change(function(){
+                if($(this).is(":checked")){
+                    $("#stan").text("zapisano cie do newslettera")
+                } else {
+                    $("#stan").text("wypisano cie z newslettera")
+                }
+            })
+
+            $("#akceptuj").change(function(){
+                if($(this).is(":checked")){
+                    $("#dalej").prop("disabled", false);
+                } else {
+                     $("#dalej").prop("disabled", true);
+
+                }
+            })
+
+            //lub
+              $("#dalej").prop("disabled", !$("this").is(":checked"));
+
+              $("#tekst").on("input", function(){
+                $("#podglad").text($(this).val());
+              })
+
+
+              $("#area").on("input", function(){
+                let liczba = $(this).prop("maxlength") - $(this).val().length;
+                $("#znaki").text("pozostało " + liczba + " znaków");
+
+                if(liczba < 10){
+                    $("#znaki").css("color", "red")
+                } else {
+                    $("#znaki").css("color", "black")
+                }
+              })
+
+            
+
+           
+
+        })
+
+
+    </script>
+
+    <style>
+      
+    </style>
+</head>
+<body>
+    <select id="rozmiar">
+        <option value="20">mała</option>
+        <option value="40">średnia</option>
+        <option value="60">duża</option>
+
+        
+    </select>
+
+    <p id="platnosc">do zapłaty: 20 zł </p>
+
+    <hr>
+    
+    <input type="checkbox" id="newsletter">chce newsletter
+    <p id="stan"></p>
+
+    <hr>
+
+     <input type="checkbox" id="akceptuj">akceptuje regulamin
+     <button id="dalej" disabled>dalej</button>
+
+     <hr>
+
+     <input type="text" id="tekst">
+     <p> podgląd: <span id="podglad"></span></p>
+
+     <hr>
+
+     <textarea maxlength="100" id="area"></textarea>
+     <p id="znaki">pozostało 100 znaków</p>
+
+    
+    
+</body>
+</html>
