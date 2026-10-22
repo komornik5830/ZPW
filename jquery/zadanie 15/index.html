@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      
+        $(function(){
+            $("#sprawdz").click(function(){
+                let imie = $("#imie").val().trim()
+                if(imie === ""){
+                    $("#blad").text("pole nie moze byc puste")
+                } else {
+                     $("#blad").text("twoje imie to: " + imie)
+
+                }
+
+            })
+
+            $("#formularz").submit(function(e){
+                e.preventDefault();
+                 let nazwisko = $("#nazwisko").val().trim()
+                if(nazwisko === ""){
+                    $("#bond").css("color", "red")
+                    $("#bond").text("Podaj nazwisko");
+                } else {
+                    $("#bond").css("color", "green")
+                    $("#bond").text("wysłano formularz");
+                    
+                  
+                }
+            })
+
+            $("#sprawdzwiek").click(function(){
+                let wiek = $("#wiek").val()
+
+                if(isNaN(wiek)){
+                    $("#wynik").text("wiek musi być liczbą")
+                } else {
+                      $("#wynik").text("masz " + wiek + " lat")
+
+                }
+            })
+
+             $("#sprawdz").click(function(){
+                let ocena = $("#ocena").val()
+
+                if(ocena === ""){
+                       $("#ocenawynik").text("pole nie może być puste")
+
+                } else {
+                    if(isNaN(ocena)){
+                    $("#wynik").text("ocena musi być liczbą")
+                } else {
+                    if(ocena >= 0 && ocena <= 6){
+                          $("#ocenawynik").text("zapisano ocene:  " + ocena)
+                    } else {
+                          $("#ocenawynik").text("podaj coene w zakrasie 1-6")
+
+                    }
+                      
+
+                }
+                }
+
+                
+
+                
+            
+            })
+
+
+        });
+    
+        
+
+
+    </script>
+</head>
+<body>
+    <input type="text" id="imie">
+    <button id="sprawdz">sprawdź</button>
+    <p id="blad"></p>
+    <hr>
+
+    <form id="formularz">
+        <input type="text" id="nazwisko">
+        <button type="submit">Wyślij</button>
+        <p id="bond"></p>
+    </form>
+
+    <hr>
+       
+
+        <input type="text" id="wiek">
+        <button id="sprawdzwiek">Wyślij</button>
+        <p id="wynik"></p>
+        <hr>
+
+        <input type="text" id="ocena">
+        <button id="sprawdz">zapisz</button>
+        <p id="ocenawynik"></p>
+   
+    
+    
+</body>
+</html>
